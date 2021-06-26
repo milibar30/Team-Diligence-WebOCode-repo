@@ -1,4 +1,192 @@
 
+/* Games Section CSS */
+.page-content {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin-left: 22vw;
+  max-width: 1024px;
+  padding-bottom: 33vh;
+  margin-top: 14vh;
+  font-family: var(--font-sans);
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.game-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow:  1px 10px 21px 0px #130d0d ;
+}
+@media (min-width: 600px) {
+  .game-card {
+    height: 350px;
+  }
+}
+
+.game-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.game-card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+.game-card:nth-child(1):before {
+  background-image: url("./images/dota2.png");
+}
+.game-card:nth-child(2):before {
+  background-image: url("./images/valo.jfif");
+}
+.game-card:nth-child(3):before {
+  background-image: url("./images/csgo.jfif");
+  background-position: center;
+}
+.game-card:nth-child(4):before {
+  background-image: url("./images/fifa.png");
+  background-position: center;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.game-btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgba(8, 2, 2, 0.26);
+  border: none;
+}
+.game-btn:hover {
+  background-color: #0d0d0d;
+}
+.game-btn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+.heading {
+  font-family: sans-serif;
+  color: aliceblue;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -5vh;
+  margin-top: 22vh;
+  margin-left: 25vw;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .game-card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .game-card:hover,
+  .game-card:focus-within {
+    align-items: center;
+  }
+  .game-card:hover:before,
+  .game-card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .game-card:hover:after,
+  .game-card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .game-card:hover .content,
+  .game-card:focus-within .content {
+    transform: translateY(0);
+  }
+  .game-card:hover .content > *:not(.title),
+  .game-card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .game-card:focus-within:before,
+  .game-card:focus-within:after,
+  .game-card:focus-within .content,
+  .game-card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+  }
+}
+
+
+
 
 .sidebar{
     position : fixed;
