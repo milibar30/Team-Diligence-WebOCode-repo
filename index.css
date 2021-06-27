@@ -32,6 +32,9 @@
   }
 }
 
+p{
+  font-size: 19px;
+}
 
 
 /* Games Page Content */
@@ -78,15 +81,23 @@
   overflow: hidden;
   padding: 1rem;
   width: 100%;
+  height: 400px;
   text-align: center;
   color: whitesmoke;
   background-color: whitesmoke;
   box-shadow:  1px 10px 21px 0px #130d0d ;
 
 }
-@media (min-width: 600px) {
+@media (min-width: 768px) and (max-width:1000px){
   .game-card {
     height: 350px;
+    /* width: 34vw; */
+  }
+}
+@media (max-width:768px){
+  .game-card {
+
+    width: 34vw;
   }
 }
 
@@ -348,6 +359,8 @@
   }
 }
 
+/* End of Games Content */
+
 .sidebar{
     position : fixed;
     left: -250px;
@@ -488,7 +501,7 @@
     top: -80px;
     left:0;
   }
-  .about {
+  /* .about {
     height: 100vh;
     scroll-snap-align: center;
     font-family: sans-serif;
@@ -511,9 +524,16 @@
   
   }
   .container {
-    display: flex;
+    display: flex;    
+    margin-top: 16vh;
     align-items: center;
     justify-content: center;  
+  }
+
+  @media screen and (max-width:1000px){
+    .container{
+
+    }
   }
   
   img{
@@ -532,10 +552,5 @@
     padding : 20px 20px 20px; 
     height: 45vh;
       min-width: 15vw;
-  }
-  @media screen and (max-width : 700px ){
-    .text{
-      font-size : 10px;
-    }
-   
-  }
+  } */
+  
