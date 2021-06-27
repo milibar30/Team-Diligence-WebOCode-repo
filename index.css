@@ -50,7 +50,7 @@
   .page-content {
     grid-template-columns: repeat(1, 1fr);
   }
-  .card{
+  .game-card{
     height: 63vh;
   }
 }
@@ -71,7 +71,7 @@
 }
 
 /* Games Cards */
-.card {
+.game-card {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -85,12 +85,12 @@
 
 }
 @media (min-width: 600px) {
-  .card {
+  .game-card {
     height: 350px;
   }
 }
 
-.card:before {
+.game-card:before {
   content: "";
   position: absolute;
   top: 0;
@@ -102,7 +102,7 @@
   transition: transform calc(var(--d) * 1.5) var(--e);
   pointer-events: none;
 }
-.card:after {
+.game-card:after {
   content: "";
   display: block;
   position: absolute;
@@ -119,17 +119,17 @@
   transform: translateY(-50%);
   transition: transform calc(var(--d) * 2) var(--e);
 }
-.card:nth-child(1):before {
+.game-card:nth-child(1):before {
   background-image: url("./images/dota2.png");
 }
-.card:nth-child(2):before {
+.game-card:nth-child(2):before {
   background-image: url("./images/valo.jfif");
 }
-.card:nth-child(3):before {
+.game-card:nth-child(3):before {
   background-image: url("./images/csgo.jfif");
   background-position: center;
 }
-.card:nth-child(4):before {
+.game-card:nth-child(4):before {
   background-image: url("./images/fifa.png");
   background-position: center;
 }
@@ -171,11 +171,11 @@
   letter-spacing: 0.025rem;
   text-transform: uppercase;
   color: white;
-  background-color: rgba(8, 2, 2, 0.26);
+  background-color: yellow;
   border: none;
 }
 .game-btn:hover {
-  background-color: #0d0d0d;
+  background-color: yellow;
 }
 .game-btn:focus {
   outline: 1px dashed yellow;
@@ -200,7 +200,7 @@
 }
 
 @media (hover: hover) and (min-width: 600px) {
-  .card:after {
+  .game-card:after {
     transform: translateY(0);
   }
 
@@ -213,33 +213,33 @@
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
   }
 
-  .card:hover,
-  .card:focus-within {
+  .game-card:hover,
+  .game-card:focus-within {
     align-items: center;
   }
-  .card:hover:before,
-  .card:focus-within:before {
+  .game-card:hover:before,
+  .game-card:focus-within:before {
     transform: translateY(-4%);
   }
-  .card:hover:after,
-  .card:focus-within:after {
+  .game-card:hover:after,
+  .game-card:focus-within:after {
     transform: translateY(-50%);
   }
-  .card:hover .content,
-  .card:focus-within .content {
+  .game-card:hover .content,
+  .game-card:focus-within .content {
     transform: translateY(0);
   }
-  .card:hover .content > *:not(.title),
-  .card:focus-within .content > *:not(.title) {
+  .game-card:hover .content > *:not(.title),
+  .game-card:focus-within .content > *:not(.title) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
   }
 
-  .card:focus-within:before,
-  .card:focus-within:after,
-  .card:focus-within .content,
-  .card:focus-within .content > *:not(.title) {
+  .game-card:focus-within:before,
+  .game-card:focus-within:after,
+  .game-card:focus-within .content,
+  .game-card:focus-within .content > *:not(.title) {
     transition-duration: 0s;
   }
 }
@@ -304,7 +304,7 @@
 }
 
 @media (hover: hover) and (min-width: 600px) {
-  .card:after {
+  .game-card:after {
     transform: translateY(0);
   }
 
@@ -317,33 +317,33 @@
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
   }
 
-  .card:hover,
-  .card:focus-within {
+  .game-card:hover,
+  .game-card:focus-within {
     align-items: center;
   }
-  .card:hover:before,
-  .card:focus-within:before {
+  .game-card:hover:before,
+  .game-card:focus-within:before {
     transform: translateY(-4%);
   }
-  .card:hover:after,
-  .card:focus-within:after {
+  .game-card:hover:after,
+  .game-card:focus-within:after {
     transform: translateY(-50%);
   }
-  .card:hover .content,
-  .card:focus-within .content {
+  .game-card:hover .content,
+  .game-card:focus-within .content {
     transform: translateY(0);
   }
-  .card:hover .content > *:not(.title),
-  .card:focus-within .content > *:not(.title) {
+  .game-card:hover .content > *:not(.title),
+  .game-card:focus-within .content > *:not(.title) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
   }
 
-  .card:focus-within:before,
-  .card:focus-within:after,
-  .card:focus-within .content,
-  .card:focus-within .content > *:not(.title) {
+  .game-card:focus-within:before,
+  .game-card:focus-within:after,
+  .game-card:focus-within .content,
+  .game-card:focus-within .content > *:not(.title) {
     transition-duration: 0s;
   }
 }

@@ -1,7 +1,7 @@
 #Event-Details{
 	width: 100%;
 	
-	background-color: #1D1128;
+	background-color: #331940;
 
 	padding-top: 5vw;
 	padding-bottom: 5vw;
@@ -20,13 +20,17 @@
 #Event-Details .card{
 	border: none;
 	text-align: left;
-	background-color: #1D1128;
+	background-color: #331940;
 	color: yellow;
     padding-left: 4vw;
     padding-right: 2vw;
+	
+}
+#Event-Details .card-body,{
+	display: unset;
 }
 
 #Event-Details .list-group-item{
-	background-color:#1D1128;
+	background-color:#331940;
 	color: white;
 }
