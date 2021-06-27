@@ -8,6 +8,7 @@
 .main-container {
   background-color: #1d1128;
   margin-top: -26px;
+  overflow: hidden;
 }
 /* Games Section CSS */
 .page-content {
@@ -88,13 +89,23 @@ p{
   box-shadow:  1px 10px 21px 0px #130d0d ;
 
 }
+
+@media screen and (max-width: 500px) {
+
+  .game-card{
+    height: 63vh;
+    width: 90vw;
+
+  }
+}
+
 @media (min-width: 768px) and (max-width:1000px){
   .game-card {
     height: 350px;
     /* width: 34vw; */
   }
 }
-@media (max-width:768px){
+@media (min-width:501px) and  (max-width:768px){
   .game-card {
 
     width: 34vw;
@@ -410,6 +421,27 @@ p{
   #check{
     display: none;
   }
+  .explore-btn{
+    width: 200px;
+    height:50px;
+    z-index : 1;
+    border: 0;
+    border-radius: 10px;
+    background-color: yellow;
+    color: black;
+    transform: translate(-800px,200px);
+  }
+  .explore-btn2{
+    width: 200px;
+    height:50px;
+    z-index : 1;
+    border: 0;
+    border-radius: 10px;
+    background-color: yellow;
+    color: black;
+    transform: translate(-400px,200px);
+
+  }
   label #btn,
   label #cancel {
     position: absolute;
@@ -473,7 +505,7 @@ p{
     margin: 15px;
     z-index: 1;
     transition: 2s;
-    transform: translateY(-100px);
+    transform: translate(100px,-100px);
   }
   .video-container {
     position: absolute;
