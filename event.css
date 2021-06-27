@@ -1,0 +1,32 @@
+#Event-Details{
+	width: 100%;
+	
+	background-color: #1D1128;
+
+	padding-top: 5vw;
+	padding-bottom: 5vw;
+   
+}
+
+.Event-heading h1{
+	color: white;
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 0.08em;
+	text-align: center;
+	font-size: 55px;
+	text-shadow: 1px 1px #F6C6EA;
+}
+
+#Event-Details .card{
+	border: none;
+	text-align: left;
+	background-color: #1D1128;
+	color: yellow;
+    padding-left: 4vw;
+    padding-right: 2vw;
+}
+
+#Event-Details .list-group-item{
+	background-color:#1D1128;
+	color: white;
+}
