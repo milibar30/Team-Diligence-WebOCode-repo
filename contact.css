@@ -3,10 +3,11 @@
 	height: 100%;
 	background: linear-gradient(rgba(29, 17, 40, 0.7),rgba(0, 0, 0, 0.5)),url("./images/contactBG.jpg") no-repeat center center /cover;
 	background-color: #1D1128;
-
+  margin-top: 31vh;
 	padding-top: 5vw;
 	padding-bottom: 5vw;
 }
+
 
 .contact-body{
 	padding-top: 3vw;
