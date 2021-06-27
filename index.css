@@ -247,7 +247,7 @@
   label #cancel {
     position: absolute;
     cursor: pointer;
-    background: rgb(87, 87, 224);
+    background:#1D1128;
     border-radius: 3px;
     z-index: 1;
   }
