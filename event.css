@@ -1,7 +1,7 @@
-#Event-Details{
+#Event-Details section{
 	width: 100%;
-	
-	background-color: #331940;
+	height: auto;
+	background-color: #1D1128;
 
 	padding-top: 5vw;
 	padding-bottom: 5vw;
@@ -20,17 +20,16 @@
 #Event-Details .card{
 	border: none;
 	text-align: left;
-	background-color: #331940;
+	background-color: #1D1128;
 	color: yellow;
     padding-left: 4vw;
     padding-right: 2vw;
-	
-}
-#Event-Details .card-body,{
-	display: unset;
+	font-family: 'Open Sans Condensed', sans-serif;
+	letter-spacing: 0.06em;
 }
 
+
 #Event-Details .list-group-item{
-	background-color:#331940;
+	background-color:#1D1128;
 	color: white;
 }
