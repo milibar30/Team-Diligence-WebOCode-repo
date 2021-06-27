@@ -1,5 +1,36 @@
 
+.main-container {
+  background-color: #1d1128;
+  margin-top: -26px;
+}
+
+
 /* Games Section CSS */
+.page-content {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin-left: 22vw;
+  max-width: 1024px;
+  min-width: 768px;
+  padding-bottom: 33vh;
+  margin-top: 14vh;
+  font-family: var(--font-sans);
+}
+@media (min-width: 768px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+
+/* Games Page Content */
 .page-content {
   display: grid;
   grid-gap: 1rem;
@@ -10,18 +41,33 @@
   margin-top: 14vh;
   font-family: var(--font-sans);
 }
-@media (min-width: 600px) {
+
+@media screen and (max-width: 500px) {
+  .page-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card{
+    height: 63vh;
+  }
+}
+@media (min-width:501px) and (max-width: 768px) {
   .page-content {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 769px) {
   .page-content {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+@media screen  and (max-width:1000px) {
+  .page-content {
+    margin-left:2vw;
+  }
+}
 
-.game-card {
+/* Games Cards */
+.card {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -32,14 +78,15 @@
   color: whitesmoke;
   background-color: whitesmoke;
   box-shadow:  1px 10px 21px 0px #130d0d ;
+
 }
 @media (min-width: 600px) {
-  .game-card {
+  .card {
     height: 350px;
   }
 }
 
-.game-card:before {
+.card:before {
   content: "";
   position: absolute;
   top: 0;
@@ -51,7 +98,7 @@
   transition: transform calc(var(--d) * 1.5) var(--e);
   pointer-events: none;
 }
-.game-card:after {
+.card:after {
   content: "";
   display: block;
   position: absolute;
@@ -68,20 +115,132 @@
   transform: translateY(-50%);
   transition: transform calc(var(--d) * 2) var(--e);
 }
-.game-card:nth-child(1):before {
+.card:nth-child(1):before {
   background-image: url("./images/dota2.png");
 }
-.game-card:nth-child(2):before {
+.card:nth-child(2):before {
   background-image: url("./images/valo.jfif");
 }
-.game-card:nth-child(3):before {
+.card:nth-child(3):before {
   background-image: url("./images/csgo.jfif");
   background-position: center;
 }
-.game-card:nth-child(4):before {
+.card:nth-child(4):before {
   background-image: url("./images/fifa.png");
   background-position: center;
 }
+
+/* Games Card Content */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.game-btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgba(8, 2, 2, 0.26);
+  border: none;
+}
+.game-btn:hover {
+  background-color: #0d0d0d;
+}
+.game-btn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+.heading {
+  font-family: sans-serif;
+  color: aliceblue;
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  margin-bottom: -5vh;
+  margin-top: 22vh;
+  margin-left: 25vw;
+}
+
+@media screen and (max-width: 1000px) {
+  .heading{
+    margin-left: 6vw;
+  }
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .card:hover,
+  .card:focus-within {
+    align-items: center;
+  }
+  .card:hover:before,
+  .card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .card:hover:after,
+  .card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .card:hover .content,
+  .card:focus-within .content {
+    transform: translateY(0);
+  }
+  .card:hover .content > *:not(.title),
+  .card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .card:focus-within:before,
+  .card:focus-within:after,
+  .card:focus-within .content,
+  .card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+  }
+}
+
+/* End of Games Section */
 
 .content {
   position: relative;
@@ -141,7 +300,7 @@
 }
 
 @media (hover: hover) and (min-width: 600px) {
-  .game-card:after {
+  .card:after {
     transform: translateY(0);
   }
 
@@ -154,39 +313,36 @@
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
   }
 
-  .game-card:hover,
-  .game-card:focus-within {
+  .card:hover,
+  .card:focus-within {
     align-items: center;
   }
-  .game-card:hover:before,
-  .game-card:focus-within:before {
+  .card:hover:before,
+  .card:focus-within:before {
     transform: translateY(-4%);
   }
-  .game-card:hover:after,
-  .game-card:focus-within:after {
+  .card:hover:after,
+  .card:focus-within:after {
     transform: translateY(-50%);
   }
-  .game-card:hover .content,
-  .game-card:focus-within .content {
+  .card:hover .content,
+  .card:focus-within .content {
     transform: translateY(0);
   }
-  .game-card:hover .content > *:not(.title),
-  .game-card:focus-within .content > *:not(.title) {
+  .card:hover .content > *:not(.title),
+  .card:focus-within .content > *:not(.title) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
   }
 
-  .game-card:focus-within:before,
-  .game-card:focus-within:after,
-  .game-card:focus-within .content,
-  .game-card:focus-within .content > *:not(.title) {
+  .card:focus-within:before,
+  .card:focus-within:after,
+  .card:focus-within .content,
+  .card:focus-within .content > *:not(.title) {
     transition-duration: 0s;
   }
 }
-
-
-
 
 .sidebar{
     position : fixed;
